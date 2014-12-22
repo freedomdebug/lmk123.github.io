@@ -10,26 +10,23 @@
 
 ## Android SDK
 
-在创建一个 Hello World 之前，电脑上还需要安装对应平台的 SDK 。例如，若需要生成 Android 应用，就需要安装 [Android SDK](http://developer.android.com/sdk/index.html#Other)。
-这个链接指向一个 SDK 管理工具。对于 Windows 用户，安装完成后需要在环境变量 `PATH` 里追加 `;D:\AndroidSDK\tools` （这里的地址指向你安装的 SDK 下的 tools 目录）。
+在创建一个 Hello World 之前，电脑上还需要安装对应平台的 SDK 。例如，若需要生成 Android 应用，就需要安装 [Android SDK](http://developer.android.com/sdk/index.html#Other)（这个链接指向一个 SDK 管理工具）。对于 Windows 用户，安装完成后需要在环境变量 `PATH` 里追加 `;D:\AndroidSDK\tools` （这里的地址指向你安装的 SDK 下的 tools 目录）。
 
-在命令行输入 `android` 打开 SDK 管理工具，工具里会列出所有的相关安装包————这些安装包都需要在线安装。但是由于众所周知的原因，在线下载非常非常慢，所以我在网上找到一个[镜像地址](http://mirrors.neusoft.edu.cn/configurations.we#android)，按照上面的配置就可以正常下载了，虽然有点慢。
-你也可以参考网上的其它方式（例如离线安装）。
+在命令行输入 `android` 打开 SDK 管理工具，工具里会列出所有的相关安装包——这些安装包都需要在线安装。但是由于众所周知的原因，在线下载非常非常慢，所以我在网上找到一个[镜像地址](http://mirrors.neusoft.edu.cn/configurations.we#android)，按照上面的配置就可以正常下载了。你也可以参考网上的其它方式（例如离线安装）。
 
 为了能通过 PhoneGap 构建出 Android 应用，需要下载 Android SDK 中的 `Tools/Android SDK Platform-tools` 、 `Tools/Android SDK Build-tools`；
 
 为了能生成指定的 Android 版本，还需要下载你需要的安卓版本中的 `SDK Platform`（例如 `Android 5.0.1 (API 21)/SDK Platform`）；
 
-为了方便开发，还需要下载对应安卓版本的镜像，供安卓模拟器使用。这一块我正在研究中，目前我都是将构建好的 apk 文件直接发到手机上安装调试的。
-不过按照文档上来看，我需要安装对应版本下的 `System Image` ，例如 `Android 5.0.1 (API 21)/ARM EABI v7a System Image` 等。
+为了方便开发，还需要下载对应安卓版本的镜像，供安卓模拟器使用。安装对应安卓版本下的 `System Image` ，例如 `Android 5.0.1 (API 21)/ARM EABI v7a System Image` 之后，打开 `ADV 管理工具`（在 Android SDK 安装目录下），切换到 `Device Definitions` 选择一种设备类型，创建就可以了。
 
 完成上面这些步骤后，就可以开始 Hello World 了。以下流程都来自 [PhoneGap 文档](http://docs.phonegap.com/en/edge/guide_cli_index.md.html#The%20Command-Line%20Interface_create_the_app)。
 
 1. 使用 `cordova create my_first_phonegap_app io.github.lmk123 ThisIsAppTitle` 在当前目录下创建一个项目
 2. 上一步创建的 `my_first_phonegap_app` 文件夹下有一个 `www` 文件夹，编辑里面的 `index.html` 文件。按照国际惯例，我写了一串 `hello milk`
 3. 在 `my_first_phonegap_app` 文件夹下运行命令 `cordova platform add android`；这样才能在下一步中生成 apk 文件
-4. 再运行 `cordova build`，等命令行闹腾完了之后，上面会显示 `BUILD SUCCESS`，后面会跟上一个指向生成的 apk 的路径
-5. 接下来就可以发送到自己的安卓手机上安装了
+4. 再运行 `cordova build`，等命令行闹腾完了之后会显示 `BUILD SUCCESS`，并输出生成的 apk 的路径，现在你就可以安装到自己的安卓手机上了
+5. 你还可以运行 `cordova run android`，这样不仅会生成 apk，还会使用你在上面生成的安卓模拟器运行你的程序（第一次启动模拟器时非常非常慢，大概10分钟，耐心等待）
 
 ## 使用插件
 
