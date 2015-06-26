@@ -1,4 +1,4 @@
-var SRC        = 'app' ,
+var SRC        = 'src' ,
     REQUIREJS  = 'build-requirejs' ,
     DIST       = 'build' ,
     CDN        = 'cdn' ,
@@ -6,7 +6,6 @@ var SRC        = 'app' ,
     // 如果不是假值，那么这个值会作为 cdn 前缀追加到需要加载的文件里。
     // 注意：最后面的斜线 / 一定要加上
     CDN_PREFIX = 'https://dn-lmk123.qbox.me/' ,
-    //CDN_PREFIX = 'http://localhost:61111/my-personal-website/cdn/' ,
     //CDN_PREFIX = false ,
     paths      = {
 
@@ -34,8 +33,8 @@ var SRC        = 'app' ,
     concat     = require( 'gulp-concat' ) ,
     deleteFile = require( 'del' ) ,
     revall     = new (require( 'gulp-rev-all' ))( {
-        dontRenameFile : [ /^\/index\.html$/ , /^\/CNAME$/ , /^\/404\.html$/ ] ,
-        dontSearchFile : [ /^\/vendor\/.*/ , /^\/CNAME$/ ] ,
+        dontRenameFile : [ /^\/CNAME$/ , /^\/[^\/]*\.html$/ ] ,
+        dontSearchFile : [ /^\/vendor\/.*/ , /^\/(baidu|google)[^\/]*\.html$/ ] ,
         transformFilename : function ( file , hash ) {
             return hash + file.path.slice( file.path.lastIndexOf( '.' ) );
         } ,

@@ -57,9 +57,9 @@ define( [ 'angular' ] , function ( angular ) {
         ] )
         .run( function () {
             var loading = angular.element( document.getElementById( 'loading' ) );
-            //loading.on( 'transitionend webkitTransitionEnd' , function () {
-            //    loading.remove();
-            //} );
+            loading.on( 'transitionend webkitTransitionEnd' , function () {
+                loading.remove();
+            } );
             loading.addClass( 'app-hide-loading' );
         } );
 } );
