@@ -1,5 +1,4 @@
 require.config( {
-    baseUrl : './' ,
     waitSeconds : 0 ,
     paths : {
         angular : 'vendor/angular/angular'
@@ -86,9 +85,9 @@ require( [
     'angular' ,
     'vendor/angular/angular-ui-router' ,
     'vendor/angular/angular-touch' ,
-    'vendor/angular/ui-bootstrap-tpls' ,
-    'vendor/angular/angular-animate' ,
-    'vendor/angular/angular-sanitize' ,
+    //'vendor/angular/ui-bootstrap-tpls' ,
+    //'vendor/angular/angular-animate' ,
+    //'vendor/angular/angular-sanitize' ,
 
     // uncomment this line when we need e2e test
     //'../test/e2e/angular-mocks' ,
@@ -97,7 +96,7 @@ require( [
     // 公用的服务和指令列在下面
 ] , function ( angular ) {
     angular.module( 'all' , [
-        'ui.router' , 'ui.bootstrap' , 'ngSanitize' , 'ngTouch' , 'ngAnimate' , 'application'
+        'ui.router' , 'ngTouch' , /*'ngAnimate' , 'ui.bootstrap' , 'ngSanitize' ,*/ 'application'
     ] );
     angular.module( 'boot' , [ 'all' ] );
     angular.bootstrap( document , [ 'boot' ] , {

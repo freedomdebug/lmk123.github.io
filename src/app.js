@@ -6,28 +6,28 @@ define( [ 'angular' ] , function ( angular ) {
             function ( $stateProvider ) {
 
                 $stateProvider
-                    .state( 'nav' , {
-                        templateUrl : 'views/nav.html'
-                    } )
+                    //.state( 'nav' , {
+                    //    templateUrl : 'views/nav.html'
+                    //} )
                     .state( 'index' , {
                         url : '/' ,
                         templateUrl : 'modules/index/index.html'
                     } )
-                    .state( 'about' , {
-                        url : '/about' ,
-                        templateUrl : 'modules/index/about-me.html'
-                    } )
-                    .state( 'blog' , {
-                        url : '/blog?{page:[1-9]\\d*}' ,
-                        templateUrl : 'modules/blog/list.html' ,
-                        controller : 'BlogListController' ,
-                        params : {
-                            page : 1
-                        } ,
-                        resolve : {
-                            load : asyncLoad( [ 'modules/blog/module' ] )
-                        }
-                    } )
+                    //.state( 'about' , {
+                    //    url : '/about' ,
+                    //    templateUrl : 'modules/index/about-me.html'
+                    //} )
+                    //.state( 'blog' , {
+                    //    url : '/blog?{page:[1-9]\\d*}' ,
+                    //    templateUrl : 'modules/blog/list.html' ,
+                    //    controller : 'BlogListController' ,
+                    //    params : {
+                    //        page : 1
+                    //    } ,
+                    //    resolve : {
+                    //        load : asyncLoad( [ 'modules/blog/module' ] )
+                    //    }
+                    //} )
                     .state( 'otherwise' , {
                         url : '*path' ,
                         template : '' ,
@@ -57,9 +57,9 @@ define( [ 'angular' ] , function ( angular ) {
         ] )
         .run( function () {
             var loading = angular.element( document.getElementById( 'loading' ) );
-            loading.on( 'transitionend webkitTransitionEnd' , function () {
-                loading.remove();
-            } );
+            //loading.on( 'transitionend webkitTransitionEnd' , function () {
+            //    loading.remove();
+            //} );
             loading.addClass( 'app-hide-loading' );
         } );
 } );
