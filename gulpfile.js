@@ -33,7 +33,7 @@ var SRC        = 'src' ,
     concat     = require( 'gulp-concat' ) ,
     deleteFile = require( 'del' ) ,
     revall     = new (require( 'gulp-rev-all' ))( {
-        dontRenameFile : [ /^\/CNAME$/ , /^\/[^\/]*\.html$/ ] ,
+        dontRenameFile : [ /^\/CNAME$/ , /^\/[^\/]*\.html$/ , /^\/favicon\.ico$/ ] ,
         dontSearchFile : [ /^\/vendor\/.*/ , /^\/(baidu|google)[^\/]*\.html$/ ] ,
         transformFilename : function ( file , hash ) {
             return hash + file.path.slice( file.path.lastIndexOf( '.' ) );
