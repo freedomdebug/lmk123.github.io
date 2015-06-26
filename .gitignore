@@ -1,1 +1,4 @@
-.idea
+build
+cdn
+node_modules
+build-requirejs

@@ -1,0 +1,16 @@
+{
+  "name" : "personal-website-for-lmk123" ,
+  "version" : "1.0.0" ,
+  "author" : "milk.lee@qq.com" ,
+  "devDependencies" : {
+    "gulp" : "*" ,
+    "gulp-uglify" : "*" ,
+    "gulp-rev-all" : "*" ,
+    "gulp-minify-css" : "*" ,
+    "gulp-htmlmin" : "*" ,
+    "gulp-concat" : "*" ,
+    "gulp-changed" : "*" ,
+    "del" : "*" ,
+    "requirejs" : "*"
+  }
+}

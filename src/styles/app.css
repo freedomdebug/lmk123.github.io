@@ -1,0 +1,98 @@
+@import url(../vendor/bootstrap/bootstrap.css);
+@import url(../vendor/font-awesome/css/font-awesome.css);
+
+html, body {
+    height: 100%;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* ui-view animate start*/
+/*[ui-view].ng-enter {*/
+/*background-color: #000;*/
+/*-webkit-transition: all 1s;*/
+/*-moz-transition: all 1s;*/
+/*-ms-transition: all 1s;*/
+/*-o-transition: all 1s;*/
+/*transition: all 1s;*/
+/*}*/
+
+/*[ui-view].ng-enter.ng-enter-active {*/
+/*background-color: #fff;*/
+/*}*/
+
+/*[ui-view].ng-leave {*/
+/*background-color: #fff;*/
+/*-webkit-transition: all 1s;*/
+/*-moz-transition: all 1s;*/
+/*-ms-transition: all 1s;*/
+/*-o-transition: all 1s;*/
+/*transition: all 1s;*/
+/*}*/
+
+/*[ui-view].ng-leave.ng-leave-active {*/
+/*background-color: #000;*/
+/*}*/
+
+/* ui-view animate end*/
+
+/*#loading mask start*/
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    display: table;
+    background-color: #fff;
+    -webkit-transition: opacity 0.2s;
+    -moz-transition: opacity 0.2s;
+    -ms-transition: opacity 0.2s;
+    -o-transition: opacity 0.2s;
+    transition: opacity 0.2s;
+}
+
+#loading > :first-child {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#loading.app-hide-loading {
+    opacity: 0;
+}
+
+/*#loading mask end*/
+
+/* #home start*/
+#home {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    display: table;
+    background-color: #f5f5d5;
+}
+
+#home > :first-child {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+/* #home end*/
+
+/* Nav fixed on the left start*/
+#nav-left {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+
+/* Nav fixed on the left end*/
