@@ -21,7 +21,7 @@ var SRC        = 'src' ,
         cssFiles : [ REQUIREJS + '/**/*.css' ] ,
         htmlFiles : REQUIREJS + '/**/*.html' ,
         imageFiles : REQUIREJS + '/**/*.{png,jpg,gif}' ,
-        copyFiles : [ REQUIREJS + '/**/*' , '!' + REQUIREJS + '/**/*.{js,css,html}' , '!' + REQUIREJS + '/build.txt' ]
+        copyFiles : [ REQUIREJS + '/**/*' , '!' + REQUIREJS + '/**/*.{js,css,html,psd}' , '!' + REQUIREJS + '/build.txt' ]
     } ,
 
     gulp       = require( 'gulp' ) ,
@@ -33,7 +33,7 @@ var SRC        = 'src' ,
     concat     = require( 'gulp-concat' ) ,
     deleteFile = require( 'del' ) ,
     revall     = new (require( 'gulp-rev-all' ))( {
-        dontRenameFile : [ /^\/CNAME$/ , /^\/[^\/]*\.html$/ , /^\/favicon\.ico$/ ] ,
+        dontRenameFile : [ /^\/CNAME$/ , /^\/[^\/]*\.html$/ ] ,
         dontSearchFile : [ /^\/vendor\/.*/ , /^\/(baidu|google)[^\/]*\.html$/ ] ,
         transformFilename : function ( file , hash ) {
             return hash + file.path.slice( file.path.lastIndexOf( '.' ) );
