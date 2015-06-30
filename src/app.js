@@ -10,7 +10,7 @@ define( [ 'angular' ] , function ( angular ) {
                     //    templateUrl : 'views/nav.html'
                     //} )
                     .state( 'index' , {
-                        url : '/' ,
+                        url : '' ,
                         templateUrl : 'modules/index/index.html'
                     } )
                     //.state( 'about' , {

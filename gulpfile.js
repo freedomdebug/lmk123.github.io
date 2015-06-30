@@ -21,7 +21,9 @@ var SRC        = 'src' ,
         cssFiles : [ REQUIREJS + '/**/*.css' ] ,
         htmlFiles : REQUIREJS + '/**/*.html' ,
         imageFiles : REQUIREJS + '/**/*.{png,jpg,gif}' ,
-        copyFiles : [ REQUIREJS + '/**/*' , '!' + REQUIREJS + '/**/*.{js,css,html,psd}' , '!' + REQUIREJS + '/build.txt' ]
+        copyFiles : [
+            REQUIREJS + '/**/*' , '!' + REQUIREJS + '/**/*.{js,css,html,psd}' , '!' + REQUIREJS + '/build.txt','!'+REQUIREJS+'/vendor/bootstrap/config.json'
+        ]
     } ,
 
     gulp       = require( 'gulp' ) ,
@@ -65,7 +67,7 @@ var SRC        = 'src' ,
 
 gulp.task( 'clean' , clean );
 
-gulp.task( 'requirejs' , requirejs ); //第一步： 从 SRC 把文件合并至 REQUIREJS 文件夹
+gulp.task( 'requirejs' , [ 'clean' ] , requirejs ); //第一步： 从 SRC 把文件合并至 REQUIREJS 文件夹
 
 // 第二步：下面四个操作是并行的，用于将 REQUIREJS 文件夹下的文件精简至 DIST 文件夹
 gulp.task( 'js' , [ 'requirejs' ] , js );
