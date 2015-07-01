@@ -6,7 +6,7 @@ html, body {
     height: 100%;
 }
 
-body{
+body {
     background-color: #f5f5d5;
 }
 
@@ -72,6 +72,27 @@ img {
 
 /*#loading mask end*/
 
+/* state 切换时的加载状态 start*/
+#page-loading {
+    background-color: #d9edf7;
+    position: fixed;
+    z-index: 1;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    top: -30px;
+    /*opacity: 0;*/
+    width: 100%;
+    transition: all 0.2s;
+}
+
+#page-loading.app-page-loading {
+    top: 0;
+    /*opacity: 1;*/
+}
+
+/* state 切换时的加载状态 end*/
+
 /* #home start*/
 #home {
     position: fixed;
@@ -93,10 +114,10 @@ img {
 
 /* Nav fixed on the left start*/
 /*#nav-left {*/
-    /*position: fixed;*/
-    /*left: 0;*/
-    /*top: 0;*/
-    /*height: 100%;*/
+/*position: fixed;*/
+/*left: 0;*/
+/*top: 0;*/
+/*height: 100%;*/
 /*}*/
 
 /* Nav fixed on the left end*/

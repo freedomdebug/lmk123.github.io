@@ -1,6 +1,8 @@
 define( [ 'angular' ] , function ( angular ) {
     return angular
         .module( 'application' , [] )
+
+        // 路由表
         .config( [
             '$stateProvider' ,
             function ( $stateProvider ) {
@@ -56,11 +58,28 @@ define( [ 'angular' ] , function ( angular ) {
                 }
             }
         ] )
+
+        // 第一次打开网站时要加载很多文件，所以给一个正在加载的弹层提示用户
         .run( function () {
             var loading = angular.element( document.getElementById( 'loading' ) );
             loading.on( 'transitionend webkitTransitionEnd' , function () {
                 loading.remove();
             } );
             loading.addClass( 'app-hide-loading' );
-        } );
+        } )
+
+        // 页面切换的时候显示加载中的状态
+        .run( [
+            '$rootScope' , /*'$timeout' ,*/ function ( $rootScope /*, $timeout*/ ) {
+                $rootScope._loading = false;
+                $rootScope.$on( '$stateChangeStart' , function () {
+                    $rootScope._loading = true;
+                } );
+                $rootScope.$on( '$stateChangeSuccess' , function () {
+                    //$timeout( function () {
+                    $rootScope._loading = false;
+                    //} , 2000 );
+                } );
+            }
+        ] );
 } );
