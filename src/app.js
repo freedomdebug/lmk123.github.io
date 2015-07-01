@@ -6,17 +6,18 @@ define( [ 'angular' ] , function ( angular ) {
             function ( $stateProvider ) {
 
                 $stateProvider
-                    //.state( 'nav' , {
-                    //    templateUrl : 'views/nav.html'
-                    //} )
                     .state( 'index' , {
                         url : '' ,
                         templateUrl : 'modules/index/index.html'
                     } )
-                    //.state( 'about' , {
-                    //    url : '/about' ,
-                    //    templateUrl : 'modules/index/about-me.html'
-                    //} )
+                    .state( 'nav' , {
+                        abstract : true ,
+                        templateUrl : 'views/nav.html'
+                    } )
+                    .state( 'nav.about' , {
+                        url : '/about' ,
+                        templateUrl : 'modules/index/about-me.html'
+                    } )
                     //.state( 'blog' , {
                     //    url : '/blog?{page:[1-9]\\d*}' ,
                     //    templateUrl : 'modules/blog/list.html' ,

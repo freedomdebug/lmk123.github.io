@@ -6,6 +6,10 @@ html, body {
     height: 100%;
 }
 
+body{
+    background-color: #f5f5d5;
+}
+
 img {
     max-width: 100%;
 }
@@ -77,7 +81,6 @@ img {
     height: 100%;
     z-index: 99;
     display: table;
-    background-color: #f5f5d5;
 }
 
 #home > :first-child {
@@ -89,11 +92,11 @@ img {
 /* #home end*/
 
 /* Nav fixed on the left start*/
-#nav-left {
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100%;
-}
+/*#nav-left {*/
+    /*position: fixed;*/
+    /*left: 0;*/
+    /*top: 0;*/
+    /*height: 100%;*/
+/*}*/
 
 /* Nav fixed on the left end*/
